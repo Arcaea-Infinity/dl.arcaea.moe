@@ -7,7 +7,7 @@ This service has been deployed under
  - [https://dl.lcwiro.com](https://dl.lcwiro.com)
 
 ## Usage
- [Usage](#usage)
+ [Usage](usage.md)
 
 ## License
 License under `616 SB License`

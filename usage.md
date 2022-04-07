@@ -4,11 +4,11 @@
 
 Enter Cloudflare dashboard and go to `Workers` tab. Click `Create a Service` button.
 
-![Create a Service](image/Create a Service.png)
+![Create a Service](image/Create-a-Service.png)
 
 Select `HTTP handler` and click `Create service` button.
 
-![HTTP handler](image/HTTP handler.png)
+![HTTP handler](image/HTTP-handler.png)
 
 And your service will be created. You will get a service URL such as `aaaaabbbbb.ccccc.workers.dev`.
 
@@ -16,7 +16,7 @@ And your service will be created. You will get a service URL such as `aaaaabbbbb
 
 Go to `Resources` tab and click `Quick edit` button.
 
-![Quick edit](image/Quick edit.png)
+![Quick edit](image/Quick-edit.png)
 
 Copy the code in [index.js](index.js), and paste it into the code field. Then click `Save and Deploy` button.
 
@@ -46,7 +46,7 @@ And click `Save` button.
 
 And go to `Workers` tab and click `Add route` button.
 
-![Add route](image/Add route.png)
+![Add route](image/Add-route.png)
 
 Enter these values:
 

@@ -14,7 +14,6 @@ async function handleRequest(request) {
 
     let root;
 
-    // Fetch latest version
     switch (route) {
 
       case "/":
@@ -25,9 +24,8 @@ async function handleRequest(request) {
         // stream download
         return path.searchParams.get("lowiro_cdn") === null
             ? fetch(root.value.url, { headers: request.headers })
-            : new Response("", { status: 302, headers: {
-                "Location" : root.value.url
-        }});
+            : new Response("", { status: 302, headers: { "Location" : root.value.url }
+        });
 
       case "version":
         root = await GetLatestRelease(request.headers);

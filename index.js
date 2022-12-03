@@ -20,20 +20,10 @@ async function handleRequest(request) {
       case "/":
         root = await GetLatestRelease(request.headers);
 
-        // Redirect download url with args
+        // get download link
         const arcdl = new URL(root.value.url);
-        const arcver = `arcaea_${root.value.version}.apk`;
-        const arctoken = arcdl.search;
 
-        return new Response("", {
-          status: 302,
-          headers: { "Location": "download/" + arcver + arctoken }
-        });
-
-      case "download":
-        // Pass binary stream to client
-        return fetch(`https://static-bin.lowiro.com/serve/${path.pathname}${path.search}`,
-          { headers: request.headers });
+        return fetch(arcdl, { headers: request.headers });
 
       case "version":
         root = await GetLatestRelease(request.headers);

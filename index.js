@@ -18,12 +18,16 @@ async function handleRequest(request) {
     switch (route) {
 
       case "/":
-        root = await GetLatestRelease(request.headers);
 
         // get download link
-        const arcdl = new URL(root.value.url);
+        const root = await GetLatestRelease(request.headers);
 
-        return fetch(arcdl, { headers: request.headers });
+        // stream download
+        return path.searchParams.get("lowiro_cdn") === null
+            ? fetch(root.value.url, { headers: request.headers })
+            : new Response("", { status: 302, headers: {
+                "Location" : root.value.url
+        }});
 
       case "version":
         root = await GetLatestRelease(request.headers);

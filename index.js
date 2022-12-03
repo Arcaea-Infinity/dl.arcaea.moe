@@ -19,7 +19,7 @@ async function handleRequest(request) {
       case "/":
 
         // get download link
-        const root = await GetLatestRelease(request.headers);
+        root = await GetLatestRelease(request.headers);
 
         // stream download
         return path.searchParams.get("lowiro_cdn") === null
